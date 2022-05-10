@@ -12,7 +12,7 @@ jobs:
       - matlab/run-tests:
           source-folder: code
           code-coverage-html: test-results
-      - store_test_results:
+      - store_artifacts:
           path: test-results
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       # - matlab/run-command:
