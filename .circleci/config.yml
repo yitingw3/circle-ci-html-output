@@ -8,12 +8,16 @@ jobs:
       image: ubuntu-2004:202201-02
     steps:
       - checkout
+      - run:
+          name: check env
+          command: |
+            echo $CIRCLECI
+            echo $CIRCLE_REPOSITORY_URL
+            echo $CIRCLE_PROJECT_USERNAME
+            echo $CIRCLE_PROJECT_REPONAME
+            echo $CIRCLE_BUILD_NUM
+          shell: bash
       - matlab/install
-      - matlab/run-tests:
-          source-folder: code
-          code-coverage-html: test-results
-      - store_artifacts:
-          path: test-results
       - matlab/run-command:
           command: "license inuse"
 # Test
