@@ -1,9 +1,18 @@
 version: 2.1
 orbs:
   win: circleci/windows@4.1.1 # The Windows orb give you everything you need to start using the Windows executor.
+executors:
+  linux: &linux-executor
+    machine:
+      image: ubuntu-2204:edge
+  macos:
+    macos:
+      xcode: 13.2.1
+  windows:
+    win/default
 jobs:
   build:
-    executor: win/default
+    executor: <<parameters.executor>>
     steps:
       - checkout
       - run:
@@ -11,4 +20,9 @@ jobs:
           command: |
             curl https://mw-ci-static-dev.s3.amazonaws.com/matlab-deps/v0/versions.json | jq .semantic.r2021a
           shell: bash
-# Test
+
+workflows:
+  test:
+    matrix:
+      parameters:
+        executor: [linux, windows, macos]
