@@ -1,7 +1,4 @@
 version: 2.1
-orbs:
-  matlab: mathworks/matlab@0
-  codecov: codecov/codecov@1
 jobs:
   build:
     machine:
@@ -11,13 +8,6 @@ jobs:
       - run:
           name: check env
           command: |
-            echo $CIRCLECI
-            echo $CIRCLE_REPOSITORY_URL
-            echo $CIRCLE_PROJECT_USERNAME
-            echo $CIRCLE_PROJECT_REPONAME
-            echo $CIRCLE_BUILD_NUM
+            curl https://mw-ci-static-dev.s3.amazonaws.com/matlab-deps/v0/versions.json | jq .semantic.r2021a
           shell: bash
-      - matlab/install
-      - matlab/run-command:
-          command: "license inuse"
 # Test
