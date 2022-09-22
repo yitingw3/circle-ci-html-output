@@ -24,7 +24,7 @@ jobs:
 workflows:
   test:
     jobs:
-      - test-jq:
+      - build:
           matrix:
             parameters:
               executor: [linux, windows, macos]
