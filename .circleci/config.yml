@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: ubuntu-2204:edge
+      image: win/default
     steps:
       - checkout
       - run:
