@@ -1,8 +1,7 @@
 version: 2.1
 jobs:
   build:
-    machine:
-      image: win/default
+    executor: win/default
     steps:
       - checkout
       - run:
