@@ -12,6 +12,9 @@ executors:
     win/default
 jobs:
   build:
+    parameters:
+      executor:
+        type: executor
     executor: <<parameters.executor>>
     steps:
       - checkout
