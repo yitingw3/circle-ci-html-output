@@ -10,4 +10,4 @@ jobs:
       - name: Run Tests
         uses: matlab-actions/run-tests@v1
         with:
-          use-parallel: yes
+          use-parallel: TRUE
