@@ -1,36 +1,18 @@
 version: 2.1
 orbs:
-  win: circleci/windows@4.1.1 # The Windows orb give you everything you need to start using the Windows executor.
-executors:
-  linux: &linux-executor
-    machine:
-      image: ubuntu-2204:edge
-  macos:
-    macos:
-      xcode: 13.2.1
-  windows:
-    win/default
+  matlab: mathworks/matlab@0
+  codecov: codecov/codecov@1
 jobs:
   build:
-    parameters:
-      executor:
-        type: executor
-    executor: <<parameters.executor>>
+    machine:
+      image: ubuntu-2004:202201-02
     steps:
       - checkout
-      - run:
-          name: check env
-          command: |
-            LATEST=$(curl https://mw-ci-static-dev.s3.amazonaws.com/matlab-deps/v0/versions.json | jq .latest)
-            SEMVER=$(curl https://mw-ci-static-dev.s3.amazonaws.com/matlab-deps/v0/versions.json | jq .semantic."$LATEST")
-            echo $LATEST
-            echo $SEMVER
-          shell: bash
-
-workflows:
-  test:
-    jobs:
-      - build:
-          matrix:
-            parameters:
-              executor: [linux, windows, macos]
+      - matlab/install
+      - matlab/run-tests:
+          source-folder: code
+          code-coverage-html: test-results
+      - store_artifacts:
+          path: test-results
+      # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
+      # - matlab/run-command:
