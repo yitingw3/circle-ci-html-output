@@ -12,5 +12,5 @@ pool:
 steps:
 
 - task: InstallMATLAB@1
-  using:
+  inputs:
     release: r2022bu3
