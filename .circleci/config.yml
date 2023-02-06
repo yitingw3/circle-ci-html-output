@@ -8,7 +8,8 @@ jobs:
       image: ubuntu-2004:202201-02
     steps:
       - checkout
-      - matlab/install
+      - matlab/install:
+          release: r2022bu3
       - matlab/run-tests:
           source-folder: code
           code-coverage-html: test-results
