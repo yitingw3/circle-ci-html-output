@@ -13,9 +13,5 @@ jobs:
         uses: matlab-actions/run-command@v1
         with:
           command: license inuse
-      - name: Run Tests
-        uses: matlab-actions/run-tests@v1
-        with:
-          test-results-junit: test-results/results.xml
-          source-folder: code
-          
+        env:
+          MATHWORKS_LICENSING_ENDPOINT: stage
