@@ -18,5 +18,4 @@ jobs:
         with:
           test-results-junit: test-results/results.xml
           source-folder: code
-          use-parallel: true
           
