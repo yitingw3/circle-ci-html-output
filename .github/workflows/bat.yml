@@ -9,11 +9,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Install MATLAB
         uses: matlab-actions/setup-matlab@v1
-        env:
-          MATHWORKS_LICENSING_ENDPOINT: "ci-stage.mathworks.com/ci-licensingws/v2"
       - name: Run MATLAB Command
         uses: matlab-actions/run-command@v1
         with:
           command: license inuse
         env:
-          MATHWORKS_LICENSING_ENDPOINT: stage
+          MATHWORKS_LICENSING_ENDPOINT: "ci-stage.mathworks.com/ci-licensingws/v2"
