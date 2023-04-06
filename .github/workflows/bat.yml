@@ -14,5 +14,5 @@ jobs:
         with:
           command: license inuse
         env:
-          MATHWORKS_LICENSING_ENDPOINT: stage
+          MATHWORKS_LICENSING_ENDPOINT: dev
           
