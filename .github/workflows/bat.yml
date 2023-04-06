@@ -15,4 +15,6 @@ jobs:
           command: license inuse
         env:
           MATHWORKS_LICENSING_ENDPOINT: dev
+      - name: Test eMATLAB
+        run: matlab -batch "disp('yo world')"
           
