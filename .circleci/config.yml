@@ -2,14 +2,16 @@ version: 2.1
 orbs:
   matlab: mathworks/matlab@dev:v1-beta
   codecov: codecov/codecov@1
+env:
+  MATHWORKS_LICENSING_ENDPOINT: stage
 jobs:
   build:
     machine:
       image: ubuntu-2004:202201-02
     steps:
       - checkout
+      - run: echo $MATHWORKS_LICENSING_ENDPOINT
       - matlab/install:
-          release: r2022bu3
       - matlab/run-tests:
           source-folder: code
           code-coverage-html: test-results
