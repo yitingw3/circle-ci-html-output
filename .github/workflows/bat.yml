@@ -1,5 +1,7 @@
 name: Run MATLAB Build on GitHub-Hosted Runner
 on: [push]
+env:
+  MATHWORKS_LICENSING_ENDPOINT: stage
 jobs:
   my-job:
     name: Run MATLAB Build
@@ -14,8 +16,6 @@ jobs:
         uses: matlab-actions/run-command@v1
         with:
           command: license inuse
-        env:
-          MATHWORKS_LICENSING_ENDPOINT: stage
       - name: Test eMATLAB
         run: matlab -batch "disp('yo world')"
           
