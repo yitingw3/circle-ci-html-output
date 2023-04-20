@@ -15,5 +15,5 @@ jobs:
         with:
           command: license inuse
       - name: Test eMATLAB
-        run: matlab -batch "disp('yo world')"
+        run: matlab -batch "c = mex.getCompilerConfigurations; arrayfun(@(config)disp(config), c)"
           
