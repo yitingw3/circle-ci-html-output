@@ -16,6 +16,4 @@ jobs:
       - name: Run MATLAB Command
         uses: matlab-actions/run-command@v1
         with:
-          command: license inuse
-      - name: Run MATLAB Command
-        run: matlab -batch "license inuse"
+          command: ver
