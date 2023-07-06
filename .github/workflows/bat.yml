@@ -10,7 +10,7 @@ jobs:
       - name: Install MATLAB
         uses: matlab-actions/setup-matlab@prerelease
         with:
-          release: R2023b
+          release: R2023bU0
         env:
           MW_RELEASE_STATUS: Prerelease
       - name: Run MATLAB Command
