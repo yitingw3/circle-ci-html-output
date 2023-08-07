@@ -12,6 +12,5 @@ jobs:
       - matlab/run-tests:
           source-folder: code
           code-coverage-html: test-results
-      - store_test_results:
       - store_artifacts:
           path: test-results
