@@ -2,7 +2,7 @@ name: Run MATLAB Build on GitHub-Hosted Runner
 on: [push]
 jobs: 
   my-job-v1:
-    name: Run MATLAB Build
+    name: Run Tests V1
     runs-on: ubuntu-latest
     steps: 
       - name: Check out repository
@@ -19,7 +19,7 @@ jobs:
           source-folder: code
 
   my-job-v2:
-    name: Run MATLAB Build
+    name: Run Tests V2
     runs-on: ubuntu-latest
     steps: 
       - name: Check out repository
