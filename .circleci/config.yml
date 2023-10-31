@@ -1,15 +1,12 @@
 version: 2.1
 orbs:
-  matlab: mathworks/matlab@0
+  matlab: mathworks/matlab@v1-beta
 jobs:
   build:
     machine:
-      image: ubuntu-2004:202201-02
+      image: ubuntu-latest
     steps:
       - checkout
       - matlab/install
-      - matlab/run-tests:
-          source-folder: code
-          test-results-html: test-results
-      - store_artifacts:
-          path: test-results
+      - matlab/run-command:
+          command: ver
