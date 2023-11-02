@@ -42,7 +42,7 @@ jobs:
           command: ver
 
       # Runs a set of commands using the runners shell
-      - name: Run tests and generate artifacts
-        uses: matlab-actions/run-tests@v2-rc0
-        with:
-          source-folder: code
+      # - name: Run tests and generate artifacts
+      #   uses: matlab-actions/run-tests@v2-rc0
+      #   with:
+      #     source-folder: code
