@@ -1,27 +1,8 @@
 on: [push]
 env:
-  MATHWORKS_LICENSING_ENDPOINT: dev
+  MATHWORKS_LICENSING_ENDPOINT: stage
 jobs: 
-  # my-job-v1:
-  #   name: Run Tests V1
-  #   runs-on: ubuntu-latest
-  #   steps: 
-  #     - name: Check out repository
-  #       uses: actions/checkout@v3
-
-  #     # Sets up MATLAB on the GitHub Actions runner
-  #     - name: Setup MATLAB
-  #       uses: matlab-actions/setup-matlab@v1
-  #       with:
-  #         release: latest
-
-  #     # Runs a set of commands using the runners shell
-  #     - name: Run tests and generate artifacts
-  #       uses: matlab-actions/run-tests@v1
-  #       with:
-  #         source-folder: code
-
-  my-job-v2:
+  my-job-v2-rc:
     name: Run Tests V2
     runs-on: ubuntu-latest
     steps: 
@@ -40,7 +21,6 @@ jobs:
         uses: matlab-actions/run-command@v2-rc0
         with:
           command: disp("hello world!")
-          startup-options: -nojvm
           
       # Runs a set of commands using the runners shell
       - name: Run tests and generate artifacts
