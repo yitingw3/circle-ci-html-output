@@ -19,7 +19,7 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2-rc0
         with:
-          release: r2023a
+          release: ${{ matrix.release }}
           products: Simulink Simulink_Test
 
       - name: Run command
