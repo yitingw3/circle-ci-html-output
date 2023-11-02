@@ -4,7 +4,13 @@ env:
 jobs: 
   my-job-v2-rc:
     name: Run Tests V2
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Run this workflow on different os
+        os: [windows-2022, ubuntu-22.04, macos-12]
+        release: [r2020a, r2020b, r2021a, r2021b, r2022a, r2022b, r2023a, r2023b]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
     steps: 
       - name: Check out repository
         uses: actions/checkout@v3
@@ -15,7 +21,6 @@ jobs:
         with:
           release: r2023a
           products: Simulink Simulink_Test
-          cache: true
 
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
