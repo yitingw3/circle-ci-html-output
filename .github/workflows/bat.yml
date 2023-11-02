@@ -1,24 +1,24 @@
 name: Run MATLAB Build on GitHub-Hosted Runner
 on: [push]
 jobs: 
-  my-job-v1:
-    name: Run Tests V1
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Check out repository
-        uses: actions/checkout@v3
+  # my-job-v1:
+  #   name: Run Tests V1
+  #   runs-on: ubuntu-latest
+  #   steps: 
+  #     - name: Check out repository
+  #       uses: actions/checkout@v3
 
-      # Sets up MATLAB on the GitHub Actions runner
-      - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v1
-        with:
-          release: latest
+  #     # Sets up MATLAB on the GitHub Actions runner
+  #     - name: Setup MATLAB
+  #       uses: matlab-actions/setup-matlab@v1
+  #       with:
+  #         release: latest
 
-      # Runs a set of commands using the runners shell
-      - name: Run tests and generate artifacts
-        uses: matlab-actions/run-tests@v1
-        with:
-          source-folder: code
+  #     # Runs a set of commands using the runners shell
+  #     - name: Run tests and generate artifacts
+  #       uses: matlab-actions/run-tests@v1
+  #       with:
+  #         source-folder: code
 
   my-job-v2:
     name: Run Tests V2
@@ -29,13 +29,14 @@ jobs:
 
       # Sets up MATLAB on the GitHub Actions runner
       - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2-beta
+        uses: matlab-actions/setup-matlab@v2-rc0
         with:
+          release: r2023a
           products: Simulink Simulink_Test
           cache: true
 
       # Runs a set of commands using the runners shell
       - name: Run tests and generate artifacts
-        uses: matlab-actions/run-tests@v1
+        uses: matlab-actions/run-tests@v2-rc0
         with:
           source-folder: code
