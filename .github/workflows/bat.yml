@@ -45,6 +45,11 @@ jobs:
         uses: matlab-actions/run-command@v2-rc0
         with:
           command: ver
+
+      - name: Run command
+        uses: matlab-actions/run-command@v2-rc0
+        with:
+          command: exit(42)
           
       # Runs a set of commands using the runners shell
       # - name: Run tests and generate artifacts
