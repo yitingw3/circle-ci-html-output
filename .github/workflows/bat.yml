@@ -39,7 +39,7 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: disp("hello world")!
+          command: disp("hello world!")
 
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
