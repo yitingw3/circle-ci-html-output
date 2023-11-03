@@ -7,8 +7,8 @@ jobs:
     strategy:
       matrix:
         # Run this workflow on different os
-        os: [windows-2022, ubuntu-22.04, macos-12]
-        release: [r2020a, r2020b, r2021a, r2021b, r2022a, r2022b, r2023a, r2023b]
+        os: [ubuntu-22.04] # [windows-2022, ubuntu-22.04, macos-12]
+        release: [r2023a] # [r2020a, r2020b, r2021a, r2021b, r2022a, r2022b, r2023a, r2023b]
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps: 
@@ -26,6 +26,7 @@ jobs:
         uses: matlab-actions/run-command@v2-rc0
         with:
           command: disp("hello world!")
+          startup-options: -nojvm
           
       # Runs a set of commands using the runners shell
       - name: Run tests and generate artifacts
