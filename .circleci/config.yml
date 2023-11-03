@@ -10,6 +10,7 @@ jobs:
       image: ubuntu-2204:2023.10.1
     steps:
       - checkout
-      - matlab/install
+      - matlab/install:
+          release: r2023a
       - matlab/run-command:
           command: ver
