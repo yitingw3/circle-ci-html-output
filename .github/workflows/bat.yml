@@ -21,6 +21,7 @@ jobs:
         with:
           release: ${{ matrix.release }}
           products: Simulink Simulink_Test
+          cache: true
 
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
