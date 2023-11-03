@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  matlab: mathworks/matlab@dev:eff1a24864b611b9f5ed2bf894b1a9704c053d7b
+  matlab: mathworks/matlab@dev:v1-rc
 jobs:
   build:
     environment:
@@ -14,3 +14,5 @@ jobs:
           release: r2023a
       - matlab/run-command:
           command: ver
+      - matlab/run-tests:
+          source-folder: code
