@@ -11,7 +11,6 @@ jobs:
     steps:
       - checkout
       - matlab/install:
-          release: r2023a
       - matlab/run-command:
           command: ver
       - matlab/run-tests:
