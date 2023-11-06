@@ -10,7 +10,7 @@ jobs:
       image: ubuntu-2204:2023.10.1
     steps:
       - checkout
-      - matlab/install:
+      - matlab/install
       - matlab/run-command:
           command: ver
       - matlab/run-tests:
