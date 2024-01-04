@@ -8,7 +8,7 @@ jobs:
       matrix:
         # Run this workflow on different os
         os: [windows-2022, ubuntu-22.04, macos-12]
-        release: [r2021a, r2021b, r2022a, r2022b, r2023a, r2023b]
+        release: [r2023a, r2023b]
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps: 
