@@ -1,6 +1,6 @@
 on: [push]
-env:
-  MATHWORKS_LICENSING_ENDPOINT: stage
+#env:
+#  MATHWORKS_LICENSING_ENDPOINT: stage
 jobs: 
   my-job-v2-rc:
     name: Run Tests V2
